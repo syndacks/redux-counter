@@ -28,18 +28,25 @@ class App extends Component {
     this.setState({counter: newState})
   }
 
+  subtractFiveHandler = () => {
+    const prevState = this.state.counter;
+    let newState = prevState - 5;
+    this.setState({counter: newState})
+  }
+
   render() {
     const sumTypes = [
-      {name: "Add One", ammountToSum: this.addOneHandler},
-      {name: "Subtract One", ammountToSum: this.subtractOneHandler},
-      {name: "Add Five", ammountToSum: this.addFiveHandler},
+      {name: "Add One", ammountHandler: this.addOneHandler},
+      {name: "Subtract One", ammountHandler: this.subtractOneHandler},
+      {name: "Add Five", ammountHandler: this.addFiveHandler},
+      {name: "Subtract Five", ammountHandler: this.subtractFiveHandler},
     ];
 
     let myButtons = sumTypes.map((i) => {
       return (
         <CountButton
           sumType={i.name}
-          clicked={i.ammountToSum}
+          clicked={i.ammountHandler}
           key={i.name}
           className={classes.button}
           />

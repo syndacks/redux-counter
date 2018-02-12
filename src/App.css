@@ -1,0 +1,15 @@
+.ButtonGrid {
+  color: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 25% 100px auto;
+  grid-template-areas: "button" "button" "button";
+  justify-items: center;
+}
+
+.Button {
+  grid-area: "button";
+  background-color: purple;
+  align-content: center;
+  size: 330%;
+}
